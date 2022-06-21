@@ -40,7 +40,7 @@ def gnutls_version():
     gnutls = "/usr/include/gnutls/gnutls.h"
     with open(gnutls) as fd:
         for l in fd.readlines():
-            m = re.match(r'#define\s+GNUTLS_VERSION_([A-Z]+)\s+(\d)', l)
+            m = re.match(r'#define\s+GNUTLS_VERSION_([A-Z]+)\s+(\d+)', l)
             if m:
                 key, value = m.group(1), m.group(2)
                 ret[key.lower()] = int(value)
