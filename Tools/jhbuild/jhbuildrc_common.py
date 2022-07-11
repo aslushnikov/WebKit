@@ -50,7 +50,8 @@ def gnutls_version():
 
 def use_openssl_backend():
     v = gnutls_version()
-    return v["major"] <= 3 and v["minor"] <= 6 and v["patch"] < 13
+    # Use Open SSL if gnu TLS version is less then 3.6.13
+    return v["major"] * 100000 + v["minor"] * 1000 + v["patch"] < 3 * 100000 + 6 * 1000 + 13
 
 
 def init(jhbuildrc_globals, jhbuild_platform):
