@@ -25,7 +25,6 @@ list(APPEND WebKitTestRunner_LIBRARIES
     ${GLIB_LIBRARIES}
     Cairo::Cairo
     GTK::GTK
-    stdc++fs
 )
 
 list(APPEND WebKitTestRunnerInjectedBundle_LIBRARIES
