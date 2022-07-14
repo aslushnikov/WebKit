@@ -11,7 +11,7 @@ aptIfElse() {
 }
 
 aptIfExists() {
-    local ret=$(apt show "$1" 2>/dev/null)
+    ret=$(apt show "$1" 2>/dev/null)
     if [[ $? -ne 0 ]]; then
         return
     fi
@@ -56,9 +56,12 @@ PACKAGES=(
     libwayland-dev
     libwebp-dev
     libwoff-dev
+    libxml2-utils
+    libxcb-glx0-dev
     libxslt1-dev
     ninja-build
     patch
+    patchelf
     ruby
 
     # These are dependencies necessary for running tests.
