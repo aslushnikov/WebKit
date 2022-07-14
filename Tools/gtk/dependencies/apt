@@ -34,9 +34,7 @@ PACKAGES+=(
     libxtst-dev
     nasm
     xfonts-utils
-    $(aptIfExists libenchant-dev)
-    # This is available on Debian 11
-    $(aptIfExists libenchant-2-dev)
+    $(aptIfElse libenchant-dev libenchant-2-dev)
 
     # These are dependencies necessary for running tests.
     cups-daemon
